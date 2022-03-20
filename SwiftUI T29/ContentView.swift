@@ -9,8 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        ScrollView {
+            LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 16), count: 4)) {
+                ForEach(0 ..< 12) { item in
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(.blue)
+                        .frame(height: 100)
+                }
+            }
             .padding()
+        }
     }
 }
 
